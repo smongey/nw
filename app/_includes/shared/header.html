@@ -1,1 +1,20 @@
-<header id="header-primary" class="header-primary"></header>
+<header>
+
+	<nav role="navigation">
+		<ul class="main">
+			<li class="shop">
+				<a href="#">Shop</a>
+			</li>
+			<li>
+				{% include shared/_logo.html %}
+			</li>
+		
+			<li class="info">
+				<a href="#">Info</a>
+			</li>
+		</ul>
+	</nav>
+	{% include shared/_product-menu.html %}
+	{% include shared/_info-menu.html %}
+
+</header>

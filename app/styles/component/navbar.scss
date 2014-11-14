@@ -1,0 +1,246 @@
+nav {
+	position: fixed;
+	width: 100%;
+	background: black;
+	height: em(75);
+	z-index: 3;
+	//opacity: .6;
+
+	ul.main {
+		display: block;
+		position: relative;
+		width: $desktop;
+		margin: 0 auto;
+		height: em(75);
+		z-index: 3;
+		box-sizing: border-box;
+		@media only screen and (max-width : $desktop + 40px ) {
+			width: 100%;
+		}
+	}
+	
+	// left nav title
+	li.shop {
+		width: em(150);
+		height: em(75);
+		padding: em(25) em(10);
+		display: block;
+		position: absolute;
+		top: em(0);
+		left: em(0);
+		a {
+			color: white;
+			font: 16px/22px 'TiemposBold' serif;
+		}
+
+	}
+
+	// logo
+	a.logo {
+		width: 50%;
+		text-align: center;
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: em(0);
+		margin-left: -25%;
+		text-align: center;
+		color: white;
+		.logo-svg {
+			width: em(200);
+			margin-top: em(17);
+		}
+		.logoFill {
+			fill: white;
+			transition: all ease .2s;
+		}
+		&:hover {
+			.logo-svg .logoFill {
+				//fill: grey;
+			}
+		}
+	}
+
+	// right nav title
+	li.info {
+		width: em(150);
+		height: em(75);
+		display: block;
+		position: absolute;
+		top: em(0);
+		right: em(10);
+		& > a {
+			display: block;
+			height: 18px;
+			width: 18px;
+			background: none;
+			right: em(0);
+			top: em(29);
+			text-indent: -9999px;
+			position: absolute;
+			transition: all ease .2s;
+			overflow: hidden;
+			border-radius: 10px;
+			&::before {
+				display: block;
+				content: ' ';
+				margin-top: -1px;
+				margin-left: -1px;
+				height: 22px;
+				width: 22px;
+				position: absolute;
+				background: rgba(255,255,255,1);
+				transition: all ease .2s;
+				//border-radius: 10px;
+			}
+			&::after {
+				display: block;
+				content: ' ';
+				height: 13px;
+				width: 13px;
+				top: em(29);
+				border-radius: 10px;
+				position: fixed;
+				border: 3px solid white;
+			}
+		}
+		& > a.active::before {
+			transition: all ease .2s;
+			margin-top: em(23);
+		}
+
+
+
+	}
+}
+
+.infoMenu {
+	position: fixed;
+	text-align: center;
+	height: em(75);
+	width: 100%;
+	background: black;
+	top: em(0); 	
+	left: em(0);
+	padding: em(25) 0;
+	z-index: 2;
+	transition: all ease .3s;
+	opacity: .7;
+		
+	&.active {
+		top: em(75);
+		opacity: 1;
+		@media only screen and (max-width : 640px) {
+			padding: em(10) em(50) 0;
+		}
+	}
+
+	
+	li {
+		display: inline-block;
+		padding: 0 em(7);
+	}
+	a {
+		font-family: 'Tiempos', serif;
+		color: white;
+	}
+
+}
+
+
+.productMenu {
+	position: fixed;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	background: black;
+	top: em(75); 	
+	left: em(0);
+	padding: em(10) 0 em(45) 0;
+	z-index: 2;
+	transition: all ease .5s;
+	opacity: 0;
+	pointer-events: none;
+	margin-top: -100px;
+
+	&.active {
+		opacity: 1;
+		margin-top: 0px;
+		pointer-events: auto;
+	}
+
+	& > ul {
+		width: $desktop;
+		margin: 0 auto;
+		text-align: left;
+		padding: 0 0 0 em(10);
+		@media only screen and (max-width : calc($desktop + 40px) ) {
+			width: 100%;
+		} 
+	}
+
+
+	a {
+		color: white;
+		font: 1.35em/1.45em 'TiemposBold', serif;
+	}
+
+}
+
+
+li.categories, li.brands {
+	float: left;
+	width:33%;
+	@media only screen and (max-width : 640px) {
+		width: 100%;
+	} 
+	& > a {
+		font: .8em/1.2em 'Tiempos', serif;
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding-bottom: em(20);
+
+	}
+	& > ul {
+		a {
+			position: relative;
+			display: inline-block;
+		}
+		a::after {
+			left: 0px;
+			bottom: -3px;
+			content: ' ';
+			width: 100%;
+			position: absolute;
+			height: 1px;
+			background: rgba(255,255,255,0);
+			transition: all ease .2s;
+		}
+		a:hover::after {
+			bottom: 0px;
+			background: rgba(255,255,255,1);
+		}
+	}
+}
+
+
+li.brands {
+	float: left;
+	width: 66%;
+	& > ul {
+		-webkit-column-count: 2;
+		@media only screen and (max-width : 640px) {
+			-webkit-column-count: 1;
+			width: 100%;
+		} 
+		
+	}
+}
+
+
+
+
+
+
+

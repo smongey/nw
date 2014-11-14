@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../fonts/TiemposTextWeb-Regular.eot'); /* IE 5-8 */ 
+  src: local('â˜º'),             /* sneakily trick IE */
+        url('../fonts/TiemposTextWeb-Regular.woff') format('woff');   
+}
+
+@font-face {
+  font-family: 'TiemposItalic';
+  src: url('../fonts/TiemposTextWeb-RegularItalic.eot'); /* IE 5-8 */ 
+  src: local('â˜º'),             /* sneakily trick IE */
+        url('../fonts/TiemposTextWeb-RegularItalic.woff') format('woff');   
+}
+
+@font-face {
+  font-family: 'TiemposBold';
+  src: url('../fonts/TTiemposTextWeb-Semibold.eot'); /* IE 5-8 */ 
+  src: local('â˜º'),             /* sneakily trick IE */
+        url('../fonts/TiemposTextWeb-Semibold.woff') format('woff');   
+}
+
+@font-face {
+  font-family: 'TiemposBoldItalic';
+  src: url('../fonts/TiemposTextWeb-SemiboldItalic.eot'); /* IE 5-8 */ 
+  src: local('â˜º'),             /* sneakily trick IE */
+        url('../fonts/TiemposTextWeb-SemiboldItalic.woff') format('woff');   
+}

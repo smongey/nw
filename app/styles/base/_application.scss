@@ -22,10 +22,8 @@
  * ---------------------------------------------------------------------------
  */
 
-.header-primary {}
-
-.nav-primary {}
-
-.content-primary {}
-
-.footer-primary {}
+#wrap {
+	padding: em(75) 0 0 0;
+	margin: 0 auto;
+	width: $desktop;
+}
