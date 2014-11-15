@@ -1,4 +1,5 @@
-nav {
+
+header nav {
 	position: fixed;
 	width: 100%;
 	background: black;
@@ -21,18 +22,17 @@ nav {
 	
 	// left nav title
 	li.shop {
-		width: em(150);
+		width: em(50);
 		height: em(75);
-		padding: em(25) em(10);
+		padding: em(25) 0;
 		display: block;
 		position: absolute;
 		top: em(0);
-		left: em(0);
+		left: em(20);
 		a {
 			color: white;
-			font: 16px/22px 'TiemposBold' serif;
+			font: 16px/22px $serifBold;
 		}
-
 	}
 
 	// logo
@@ -49,6 +49,10 @@ nav {
 		.logo-svg {
 			width: em(200);
 			margin-top: em(17);
+			@media only screen and (max-width : $tablet) {
+				width: em(150);
+				margin-top: em(20);
+			}
 		}
 		.logoFill {
 			fill: white;
@@ -63,12 +67,12 @@ nav {
 
 	// right nav title
 	li.info {
-		width: em(150);
+		width: em(50);
 		height: em(75);
 		display: block;
 		position: absolute;
 		top: em(0);
-		right: em(10);
+		right: em(20);
 		& > a {
 			display: block;
 			height: 18px;
@@ -90,8 +94,7 @@ nav {
 				width: 22px;
 				position: absolute;
 				background: rgba(255,255,255,1);
-				transition: all ease .2s;
-				//border-radius: 10px;
+				transition: all $ease .5s;
 			}
 			&::after {
 				display: block;
@@ -105,7 +108,7 @@ nav {
 			}
 		}
 		& > a.active::before {
-			transition: all ease .2s;
+			transition: all $ease .5s;
 			margin-top: em(23);
 		}
 
@@ -124,14 +127,18 @@ nav {
 	left: em(0);
 	padding: em(25) 0;
 	z-index: 2;
-	transition: all ease .3s;
+	transition: all $ease .5s;
 	opacity: .7;
+	overflow: hidden;
+	@media only screen and (max-width : $tablet) {
+		padding: em(10) em(20) 0;
+	}
 		
 	&.active {
 		top: em(75);
 		opacity: 1;
-		@media only screen and (max-width : 640px) {
-			padding: em(10) em(50) 0;
+		@media only screen and (max-width : $tablet) {
+			padding: em(10) em(20) 0;
 		}
 	}
 
@@ -141,7 +148,7 @@ nav {
 		padding: 0 em(7);
 	}
 	a {
-		font-family: 'Tiempos', serif;
+		font-family: $serif;
 		color: white;
 	}
 
@@ -156,13 +163,16 @@ nav {
 	background: black;
 	top: em(75); 	
 	left: em(0);
-	padding: em(10) 0 em(45) 0;
+	padding: 0 0 em(45) 0;
 	z-index: 2;
-	transition: all ease .5s;
+	transition: all $ease .5s;
 	opacity: 0;
 	pointer-events: none;
 	margin-top: -100px;
-
+	@media only screen and (max-width : $tablet ) {
+		height: 100%;
+		padding: 0 0 em(85) 0;
+	}
 	&.active {
 		opacity: 1;
 		margin-top: 0px;
@@ -173,16 +183,24 @@ nav {
 		width: $desktop;
 		margin: 0 auto;
 		text-align: left;
-		padding: 0 0 0 em(10);
-		@media only screen and (max-width : calc($desktop + 40px) ) {
+		padding: 0 em(20);
+		@media only screen and (max-width : $desktop + 40px ) {
+			padding-bottom: em(50);
 			width: 100%;
 		} 
+		@media only screen and (max-width : $tablet ) {
+			height: 100%;
+			text-align: center;	
+			overflow: auto;
+		}
 	}
 
 
 	a {
 		color: white;
-		font: 1.35em/1.45em 'TiemposBold', serif;
+		font: 1.35em/1em $serifBold;
+		padding-bottom: em(2);
+		margin-bottom: em(5);
 	}
 
 }
@@ -191,11 +209,11 @@ nav {
 li.categories, li.brands {
 	float: left;
 	width:33%;
-	@media only screen and (max-width : 640px) {
+	@media only screen and (max-width : $tablet) {
 		width: 100%;
 	} 
 	& > a {
-		font: .8em/1.2em 'Tiempos', serif;
+		font: .8em/.9em $serif;
 		display: inline-block;
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -228,9 +246,13 @@ li.categories, li.brands {
 li.brands {
 	float: left;
 	width: 66%;
+	@media only screen and (max-width : $tablet) {
+		width: 100%;
+		margin-top: em(10);
+	}
 	& > ul {
 		-webkit-column-count: 2;
-		@media only screen and (max-width : 640px) {
+		@media only screen and (max-width : $tablet) {
 			-webkit-column-count: 1;
 			width: 100%;
 		} 

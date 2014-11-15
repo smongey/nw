@@ -21,9 +21,40 @@
  * _page_name.scss      => Styles for page specific elements.
  * ---------------------------------------------------------------------------
  */
+* { margin: 0; }
+
+html, body { height: 100%; }
+
+body {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	&.locked {
+		overflow: hidden;
+	}
+}
 
 #wrap {
-	padding: em(75) 0 0 0;
-	margin: 0 auto;
 	width: $desktop;
+	padding: em(75) em(20) 0 em(20);
+	margin: 0 auto;
+	min-height: 100%;
+	margin-bottom: -75px; 
+	@media only screen and (max-width : $desktop + 40px) {
+		width: 100%;
+	}
+	@media only screen and (max-width : $tablet ) {
+		margin-bottom: -140px;
+	}
+}
+
+#wrap::after {
+	content: " ";
+	display: block;	
+}
+
+footer, #wrap:after {
+	height: 75px;
+	@media only screen and (max-width : $tablet ) {
+		height: 140px;
+	}
 }

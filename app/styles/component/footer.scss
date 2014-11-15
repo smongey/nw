@@ -1,0 +1,67 @@
+footer {
+	display:block;
+	background: rgba(0,0,0,.1);
+	padding: em(25) 0 0 0;
+	font: 14px/23px $serif;
+	letter-spacing: .5px;
+	& > div {
+		width: $desktop;
+		margin: 0 auto;
+		padding: 0 em(20);
+		position: relative;
+		@media only screen and (max-width : $desktop + 40px ) {
+			width: 100%;
+		}
+	}
+
+	li, a.copyright {
+		display: inline-block;
+		padding: 0 em(10);
+		top: em(0);
+	}
+
+	ul {
+		display: inline-block;
+	}
+
+	a {
+		color: rgba(0,0,0,.8);
+		transition: all $ease .3s;
+		&:hover {
+			color: rgba(0,0,0,1);
+		}
+	}
+
+
+	nav {
+		display: inline-block;
+		position: absolute;
+		top: em(0);
+		left: 50%;
+		width: 50%;
+		margin-left: -25%;
+		text-align: center;
+	}
+
+	.social {
+		display: inline-block;
+		position: absolute;
+		right: em(0);
+		top: em(0);
+	}
+	@media only screen and (max-width : $tablet) {
+		a.copyright, nav, .social {
+			display: block;
+			position: relative;
+			text-align: center;
+		}
+		nav {
+			width: 100%;
+			left: auto;
+			margin: auto;
+		}
+		a.copyright, li {
+			padding: em(3);
+		}
+	}
+}

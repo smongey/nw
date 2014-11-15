@@ -55,3 +55,22 @@ $form-font-family: $base-font-family;
 
 // Screen Sizes
 $desktop: 1100px;
+$tablet: 640px;
+
+
+// Type
+$serifBold: "TiemposBold", serif;
+$serif: "Tiempos", serif;
+@mixin fontFeature($s) { 
+	-moz-font-feature-settings: $s;
+	-moz-font-feature-settings: $s;
+	-ms-font-feature-settings: $s;
+	-o-font-feature-settings: $s;
+	-webkit-font-feature-settings: $s;
+	font-feature-settings: $s;
+}
+
+
+// Animation 
+$ease: cubic-bezier(.68,.02,.33,.99);
+

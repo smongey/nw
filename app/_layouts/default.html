@@ -23,10 +23,14 @@
 
     {% include shared/header.html %}
 
-    {{ content }}
-    
-    {% include shared/footer.html %}
+    <div id="wrap">
 
+      {{ content }}  
+      <div class="push"></div>
+
+    </div>
+
+    {% include shared/_footer.html %}
     {% include shared/scripts.html %}
     {% include shared/google-analytics.html %}
   </body>
