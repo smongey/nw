@@ -32,7 +32,6 @@ footer {
 		}
 	}
 
-
 	nav {
 		display: inline-block;
 		position: absolute;
@@ -46,7 +45,7 @@ footer {
 	.social {
 		display: inline-block;
 		position: absolute;
-		right: em(0);
+		right: em(12);
 		top: em(0);
 	}
 	@media only screen and (max-width : $tablet) {

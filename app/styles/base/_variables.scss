@@ -53,14 +53,19 @@ $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
 
 
+// Colours
+$copper: #CAAA99;
+
 // Screen Sizes
 $desktop: 1100px;
 $tablet: 640px;
-
+$phone: 450px;
 
 // Type
 $serifBold: "TiemposBold", serif;
+$serifBoldIta: "TiemposBoldItalic", serif;
 $serif: "Tiempos", serif;
+$serifIta: "TiemposItalic", serif;
 @mixin fontFeature($s) { 
 	-moz-font-feature-settings: $s;
 	-moz-font-feature-settings: $s;

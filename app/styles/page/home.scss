@@ -1,0 +1,151 @@
+.group.home {
+
+	padding: em(50) 0 0 0;
+
+	display: block;
+	overflow: auto;
+
+	.intro, .journal, .podcast {
+		width: em(320);
+		height: em(450);
+		text-align: center;
+		img {
+			opacity: 1;
+		}
+	}
+
+	.intro {
+		border: 1px solid black;
+		position: relative;
+		overflow: hidden;
+		span.dots {
+			&::after {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				left: em(10);
+				border-radius: em(3);
+				border: 1px solid black;
+				z-index: 2;
+			}
+			&::before {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				right: em(10);
+				border-radius: em(3);
+				border: 1px solid black;
+				z-index: 2;
+			}
+			
+			&:nth-child(2n) {
+				&::after {
+					top: em(10);
+					left: em(10);
+				}
+				&::before {
+					top: em(10);
+					right: em(10);
+				}
+			}
+		}
+		.blurb {
+			padding: em(0) em(40) em(20);
+			font: 14px/21px $serif;
+		}
+	}
+
+	.journal {
+		background: $copper;
+		color: white;
+		position: relative;
+		overflow: hidden;
+		span.dots {
+			&::after {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				left: em(10);
+				border-radius: em(3);
+				border: 1px solid white;
+				z-index: 2;
+			}
+			&::before {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				right: em(10);
+				border-radius: em(3);
+				border: 1px solid white;
+				z-index: 2;
+			}
+				
+			&:nth-child(2n) {
+				&::after {
+					top: em(10);
+					left: em(10);
+				}
+				&::before {
+					top: em(10);
+					right: em(10);
+				}
+			}
+		}
+	}
+
+	.podcast {
+		background: black;
+		color: white;
+		position: relative;
+		overflow: hidden;
+		span.dots {
+			&::after {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				left: em(10);
+				border-radius: em(3);
+				border: 1px solid white;
+				z-index: 2;
+			}
+			&::before {
+				display: block;
+				content: " ";
+				width: em(5);
+				height: em(5);
+				position: absolute;
+				bottom: em(10);
+				right: em(10);
+				border-radius: em(3);
+				border: 1px solid white;
+				z-index: 2;
+			}
+			
+			&:nth-child(2n) {
+				&::after {
+					top: em(10);
+					left: em(10);
+				}
+				&::before {
+					top: em(10);
+					right: em(10);
+				}
+			}
+		}
+	}
+}

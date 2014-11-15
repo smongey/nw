@@ -31,7 +31,23 @@ header nav {
 		left: em(20);
 		a {
 			color: white;
+			position: relative;
 			font: 16px/22px $serifBold;
+			padding-bottom: em(3);
+		}
+		a::after {
+			left: 0px;
+			bottom: -3px;
+			content: ' ';
+			width: 100%;
+			position: absolute;
+			height: 1px;
+			background: rgba(255,255,255,0);
+			transition: all ease .2s;
+		}
+		a:hover::after {
+			bottom: 0px;
+			background: rgba(255,255,255,1);
 		}
 	}
 
@@ -46,7 +62,7 @@ header nav {
 		margin-left: -25%;
 		text-align: center;
 		color: white;
-		.logo-svg {
+		img {
 			width: em(200);
 			margin-top: em(17);
 			@media only screen and (max-width : $tablet) {
@@ -54,10 +70,10 @@ header nav {
 				margin-top: em(20);
 			}
 		}
-		.logoFill {
-			fill: white;
-			transition: all ease .2s;
-		}
+		// .logoFill {
+		// 	fill: white;
+		// 	transition: all ease .2s;
+		// }
 		&:hover {
 			.logo-svg .logoFill {
 				//fill: grey;

@@ -1,15 +1,25 @@
-$('document').ready(function(){
+$(document).ready(function(){
 
 	var menuHeight = $('nav').height(), 
 		productMenu = $('.productMenu'), 
 		productMenuHeight = $('.productMenu').height(), 
 		productMenuOffset = -(productMenuHeight + menuHeight), 
 		infoLink = $('li.info a'), 
-		shopLink = $('li.shop a'), 
+		shopLink = $('li.shop a'),
+		brandInfo = $('#about'),
+		brandLink = $('a.about'),
 		infoMenu = $('.infoMenu'),
 		page = $('body'),
+		doc = $(document),
 		header = $("header.main"),
-		menuDelay = 750;
+		menuDelay = 750,
+		ease = 'easeInOutQuint',
+		backTop = $('#top a');
+
+	var scroll = {
+		bottom: false
+	}
+
 
 	header.on({
 		mouseleave: function() {
@@ -55,7 +65,7 @@ $('document').ready(function(){
 
 		l('touch bigger than 700');
 		page.addClass('mobile');
-		
+
 		shopLink.on('click', function(e){
 			e.preventDefault();
 			var scrollPos = $('body').scrollTop();
@@ -130,14 +140,93 @@ $('document').ready(function(){
 
 		$(document).on({
 			scroll: function(){
-				l('scrolled');
+				//l('scrolled');
 				infoMenu.removeClass('active');
 				infoLink.removeClass('active');
 			}
 		});
 	}
+
+
+
+	if (brandInfo.length) {
+		brandLink.on({
+			click: function(e){
+				e.preventDefault();
+
+				page.animate({ scrollTop: bottom() }, { 
+					easing: ease,
+					duration: 1500,
+					complete: function(){
+						l('scrolled ' + bottom() + ' pixels, and it was ' + ease);
+					}
+				});
+
+			}
+		});
+	}
+
+
+	$('ul.categories, ul.brands').localScroll({
+		offset: -80,
+		duration: 1500,
+		easing: ease
+	});
+
+	page.on({
+		click: function(){
+			l(page.scrollTop());
+		}
+	})
+
+
+	doc.on({
+		scroll: function(e){
+			var nearBottom = bottom() - 300;
+			if ( page.scrollTop() > nearBottom ) {
+				scroll.bottom = true
+			} else {
+				scroll.bottom = false
+			}
+
+
+			if ( scroll.bottom ) {
+				$('#top').addClass('active');
+			} else {
+				$('#top').removeClass('active');
+			}
+
+		}
+	});
+
+
+	backTop.on({
+		click: function(e){
+			e.preventDefault();
+			page.animate({ scrollTop: 0 }, { 
+				easing: ease,
+				duration: 1500,
+				complete: function(){
+					l('scrolled to top');
+				}
+			});			
+		}
+	})
 });
 
+
+// returns scrolling position to get to the bottom of the screen whenever called
+var bottom = function(){
+	var dH = $(document).height();
+	var wH = $(window).height();
+	if(isTouchy() && window.innerWidth < 500) {
+		var aboutHeight = $('#about').height() + $('footer').height();
+		return dH - (wH + aboutHeight / 2);
+	} else {
+		return dH - wH;
+	}
+
+};
 
 // device check
 function isTouchy() {

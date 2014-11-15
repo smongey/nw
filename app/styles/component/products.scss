@@ -1,7 +1,6 @@
-#brand, #category {
+#brand, #category, #home {
 
 	font: 16px/26px $serif;
-
 	header {
 		text-align: center;
 		padding: em(80) em(20) em(40) em(20);
@@ -10,8 +9,15 @@
 			color: black;
 			padding: 0 0 em(8) 0;
 			letter-spacing: -0.2px;
+			
 		}
-		.categories li { 
+		@media only screen and (max-width : $phone) {
+			padding: em(30) em(20) em(10);
+			h1 {
+				font: 30px/32px $serifBold;
+			}
+		}
+		.categories li, .brands li { 
 			display: inline-block;
 			padding: 0 em(5) em(5);
 			a {
@@ -42,15 +48,16 @@
 			h2 {
 				text-align: center;
 				color: black;
-				font:20px/26px $serif;
+				font:19px/26px $serif;
 				@include fontFeature("c2sc");
 				letter-spacing: 1px;
 				background: white;
 				padding: em(30) em(10) em(10);
-				width: em(150);
+				width: em(250);
 				margin: 0 auto;
 				position: relative;
 				z-index: 1;
+
 			}
 
 			&::after {
@@ -91,21 +98,83 @@
 				width: 28%;
 				em {
 					display:block;
+					font-style: normal;
+					font-family: $serifIta;
 				}
+			}
+			@media only screen and (max-width : $tablet) { 
+				padding: em(50);
+				h2 {
+					margin-bottom: em(20);
+				}
+				h2, .info, .ourtake {
+					width: 100%;
+				}
+			}
+			@media only screen and (max-width : $phone) { 
+				padding: em(20);
+				h2 {
+					margin-bottom: em(20);
+				}
+				h2, .info, .ourtake {
+					width: 100%;
+				}
+			}
+		}
+
+		#top {
+			float: left;
+			width: 100%;
+			text-align: center; 
+			margin: em(20) 0 em(-30) 0;
+			opacity: 0;
+			transition: all $ease 1s;
+			&.active {
+				opacity: 1;	
+			}
+			a {
+				display: inline-block;
+				padding: em(10) em(20);
+				color: rgba(0,0,0,.5);
+				transition: all $ease .3s;
+			}
+			a:hover {
+				background: rgba(0,0,0,.1);
+
 			}
 		}
 	}
 
 	.group .product:nth-child(3n+3) {
 		margin-right: 0%;
+		@media only screen and (max-width : $tablet) {
+			margin-right: 10%;
+		}
 	}
 
+	@media only screen and (max-width : $tablet) {
+		.product:nth-child(2n+2) {
+			margin-right: 0% !important;
+		}
+	}
+
+			
 	.product {
 		width: 29%;
 		float: left;
 		margin-right: 6.5%;
 		margin-bottom: 2%;
 		padding: 0 0 em(10) 0;
+		@media only screen and (max-width : $tablet) {
+			//background: blue;
+			width: 45%;
+			margin-right: 10%;
+			margin-bottom: 8%;
+		}
+		@media only screen and (max-width : $phone) {
+			margin: 0 0 em(30) 0 !important;
+			width: 100%;
+		}		
 
 		&.soldout {
 			opacity: .5;
@@ -125,7 +194,7 @@
 			img {
 				width: 100%;
 				height: auto;
-				opacity: .6;
+				opacity: 1;
 				margin: 0;
 				padding: 0;
 				display: block;
@@ -154,7 +223,9 @@
 				margin-bottom: em(-40);
 				padding: em(12) em(5);
 				text-align: center;
-				background: lighten(red, 30%);
+				background: url("../images/bg3.gif");
+			    background-size: 50px 50px;
+			    background-repeat: repeat;
 				transition: all $ease .3s;
 				font: 15px/20px $serif;
 				white-space: nowrap;
@@ -163,46 +234,8 @@
 		&:hover, .mobile & {
 			.new p {
 				margin-bottom: 0;
+				background-color: #FFF9AB;
 			}
 		}
 	}
-
-
-	
-
-	// .product > div {
-	// 	overflow: hidden;
-	// 	width: em(320);
-	// 	height: em(480);
-	// 	display: block;
-	// 	position: relative;
-	// 	bottom: 0px;
-
-	// 	.new {
-	// 		display: none;
-	// 		font: 15px/20px $serif;
-	// 		letter-spacing: .5px;
-	// 		background: yellow;
-	// 		display: block;
-	// 		height: 40px;
-	// 		width: 320px;
-	// 		bottom: 0;
-	// 		position: absolute; 
-	// 		text-align: center;
-	// 		box-sizing: border-box;
-	// 		padding: 12px 15px 15px 15px;
-	// 		background: url('https://dl.dropboxusercontent.com/u/6441733/flashing2.png') repeat;
-	// 		margin-bottom: -26px;
-	// 		transition: all ease .2s;
-	// 	}
-
-	//  }
-
-	// .product:hover {
-	// 	.new {
-	// 		margin-bottom: 0px;
-	// 		background-color: #FFF9AB;
-	// 	}
-	// }
-
 }
