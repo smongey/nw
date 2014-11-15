@@ -20,6 +20,8 @@ $(document).ready(function(){
 		bottom: false
 	}
 
+	// Fastclick implementation
+	FastClick.attach(document.body);
 
 	header.on({
 		mouseleave: function() {
