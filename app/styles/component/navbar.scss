@@ -65,20 +65,16 @@ header nav {
 		img {
 			width: em(200);
 			margin-top: em(17);
+			transition: all $ease .3s;
 			@media only screen and (max-width : $tablet) {
 				width: em(150);
 				margin-top: em(20);
 			}
-		}
-		// .logoFill {
-		// 	fill: white;
-		// 	transition: all ease .2s;
-		// }
-		&:hover {
-			.logo-svg .logoFill {
-				//fill: grey;
+			&:hover {
+				opacity: .8;
 			}
 		}
+		
 	}
 
 	// right nav title
@@ -166,8 +162,23 @@ header nav {
 	a {
 		font-family: $serif;
 		color: white;
+		position: relative;
+		display: inline-block;
 	}
-
+	a::after {
+		left: 0px;
+		bottom: -3px;
+		content: ' ';
+		width: 100%;
+		position: absolute;
+		height: 1px;
+		background: rgba(255,255,255,0);
+		transition: all ease .2s;
+	}
+	a:hover::after {
+		bottom: 0px;
+		background: rgba(255,255,255,1);
+	}
 }
 
 

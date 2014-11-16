@@ -1,0 +1,103 @@
+
+#single {
+
+}
+
+.single {
+	padding: em(40) 0 em(80) 0;
+	overflow: auto;
+	width: 100%;
+	.text {
+		width: 37%;
+		float: left;
+		margin-right: 8%;
+	}
+
+	.images {
+		width: 55%;
+		float: left;
+	}
+}
+
+
+.text {
+	
+	.top {
+		margin: 0 0 em(30) 0;
+		background: rgba(0,0,0,1);
+		color: black;
+		padding: em(35);
+		text-align: center;
+		.brand {
+			color: white;
+			text-transform: uppercase;
+			font:13px/20px $serif;
+			letter-spacing: 1px;
+		}
+
+		h1 {
+			color: white;
+			font: 30px/36px $serifBold;
+			
+		}
+		
+		.price {
+			color: white;
+			font: 24px/32px $serif;
+			@include fontFeature("onum");
+		}
+	}
+
+	.info {
+		margin: em(30) 0;
+		background: rgba(0,0,0,.1);
+		color: black;
+		padding: em(30) em(45);
+		text-align: center;
+		p {
+			margin: 0;
+		}
+	}
+
+	.buy {
+		select {
+			display: block;
+			color: white;
+			background: black;
+			border: none;
+			width: 45%;
+			float: left;
+			border-radius: 0px;
+			padding: em(20);
+			text-transform: uppercase;
+			font:13px/20px $serif;
+			letter-spacing: 1px;
+		    outline:none;
+		}
+		select option {
+			border-radius: none;
+		}
+
+		button {
+			background: rgba(0,0,0,1);
+			color: white;
+		}
+
+		button.inactive {
+			width: 45%;
+			color: black;
+			float: right;
+			padding: em(20);
+			border-radius: none;
+			background: rgba(0,0,0,.1);
+			text-transform: uppercase;
+			font:13px/20px $serif;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+
+.images {
+
+}

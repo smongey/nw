@@ -1,6 +1,7 @@
-#brand, #category, #home {
+#brand, #category, #home, #single {
 
 	font: 16px/26px $serif;
+	
 	header {
 		text-align: center;
 		padding: em(80) em(20) em(40) em(20);
@@ -53,7 +54,10 @@
 				letter-spacing: 1px;
 				background: white;
 				padding: em(30) em(10) em(10);
-				width: em(250);
+				width: auto;
+				display: inline-block;
+				left: 50%;
+				@include transform(translateX(-50%));
 				margin: 0 auto;
 				position: relative;
 				z-index: 1;
