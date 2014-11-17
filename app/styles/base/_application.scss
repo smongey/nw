@@ -28,8 +28,13 @@ html, body { height: 100%; }
 body {
 	overflow-x: hidden;
 	overflow-y: scroll;
+	opacity: 1;
+	@include transition( opacity $ease .5s );
 	&.locked {
 		overflow: hidden;
+	}
+	&.hidden {
+		opacity: .2;
 	}
 }
 
@@ -37,13 +42,18 @@ body {
 	width: $desktop;
 	padding: em(75) em(20) 0 em(20);
 	margin: 0 auto;
-	min-height: 100%;
+	min-height: 110%;
 	margin-bottom: -75px; 
+	@include transition( opacity $ease .5s );
+
 	@media only screen and (max-width : $desktop + 40px) {
 		width: 100%;
 	}
 	@media only screen and (max-width : $tablet ) {
 		margin-bottom: -140px;
+	}
+	&.hidden {
+		opacity: 0;
 	}
 }
 

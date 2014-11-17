@@ -32,18 +32,15 @@
 			bottom: 0;
 			font: 14px/22px $serif;
 			@include transition(all $ease .5s);
-			//@include transform(translateY(80%));
 		}
 		&:hover {
 			img {
 				top: 25%;
-				width: 90% !important;
-				//@include transform(translate(-50%, -75%));
+				width: 95% !important;
 			}
 			.blurb {
 				opacity: 1;
 				bottom: 10px;
-				//@include transform(translateY(70%));
 			}			
 		}
 

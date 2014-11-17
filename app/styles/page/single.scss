@@ -1,6 +1,15 @@
 
 #single {
 
+	.products {
+		@media only screen and (max-width : $phone) {
+			padding-bottom: em(30);
+			#about {
+				margin-top: em(30);
+			}
+		}
+	}
+
 }
 
 .single {
@@ -8,16 +17,26 @@
 	overflow: auto;
 	overflow-x: none;
 	width: 100%;
+	@media only screen and (max-width : $phone) {
+		padding-bottom: em(0);
+	}
 	.text {
 		width: 37%;
 		float: left;
 		margin-right: 8%;
+		padding-bottom: em(20);
+		@media only screen and (max-width : $phone) { 
+			width: 100%
+		}
 	}
 
 	.images {
 		width: 55%;
 		float: left;
 		overflow: hidden;
+		@media only screen and (max-width : $phone) { 
+			width: 100%
+		}
 	}
 }
 
@@ -56,6 +75,9 @@
 		color: black;
 		padding: em(30) em(45);
 		text-align: center;
+		@media only screen and (max-width : $phone) { 
+		padding: em(25);
+		}
 		p {
 			margin: 0;
 		}
@@ -67,17 +89,23 @@
 			background: rgba(0,0,0,1);
 			color: white;
 			text-transform: uppercase;
-			font:13px/20px $serif;
+			font: 13px/20px $serif;
 			letter-spacing: 1px;
 			float: right;
 			padding: em(20);
-			border-radius: none;
+			border-radius: 0px;
 			width: 45%;
+			outline: none;
+			pointer-events: auto;
 		}
 
 		button.inactive {
 			color: black;
 			background: rgba(0,0,0,.1);
+			pointer-events: none;
+		}
+		button:active {
+			background: $copper;
 		}
 	}
 }
