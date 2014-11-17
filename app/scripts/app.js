@@ -245,8 +245,44 @@ site.brandLink.on({
 });
 
 
-$(document).ready(function(){
+site.doc.ready(function(){
 	site.pageInit();
+
+
+	$('.images').slick({
+		arrows: false
+	});
+
+	$('.images').on('click', function(){
+		$(this).slickNext();
+	});
+
+
+    // dropdown to be refactored
+    $(".dropdown dt a").on({
+    	click: function(e) {
+    		e.preventDefault();
+    		if ($(".dropdown dd ul").hasClass('active')) {
+    			$(".dropdown dd ul, .dropdown dt a span").removeClass('active');
+    		} else {
+    			$(".dropdown dd ul, .dropdown dt a span").addClass('active');
+    		}
+    	}
+	});
+
+    $(".dropdown dd ul li a").click(function(e) {
+    	e.preventDefault();
+        var text = $(this).html();
+        $(".dropdown dt a span").html(text);
+        $(".dropdown dd ul, .dropdown dt a span").removeClass("active");
+        $("#result").html("Selected value is: " + getSelectedValue("sample"));
+    	$("button").removeClass();
+    });
+
+    function getSelectedValue(id) {
+        return $("#" + id).find("dt a span.value").html();
+    }
+
 });
 
 

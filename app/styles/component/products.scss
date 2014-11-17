@@ -1,7 +1,7 @@
 #brand, #category, #home, #single {
 
 	font: 16px/26px $serif;
-	
+
 	header {
 		text-align: center;
 		padding: em(80) em(20) em(40) em(20);
@@ -53,7 +53,7 @@
 				@include fontFeature("c2sc");
 				letter-spacing: 1px;
 				background: white;
-				padding: em(30) em(10) em(10);
+				padding: em(10) em(10) em(10);
 				width: auto;
 				display: inline-block;
 				left: 50%;
@@ -69,11 +69,11 @@
 				display: block;
 				border-bottom: 1px solid #000000;
 				margin-top: em(-25);
-				margin-bottom: em(70);
+				margin-bottom: em(50);
 			}
 		}
 		.title:not(:first-child) h2 {
-			padding-top: em(40);
+			padding-top: em(20);
 		}
 
 		#about {

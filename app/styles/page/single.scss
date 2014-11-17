@@ -6,6 +6,7 @@
 .single {
 	padding: em(40) 0 em(80) 0;
 	overflow: auto;
+	overflow-x: none;
 	width: 100%;
 	.text {
 		width: 37%;
@@ -16,6 +17,7 @@
 	.images {
 		width: 55%;
 		float: left;
+		overflow: hidden;
 	}
 }
 
@@ -60,39 +62,22 @@
 	}
 
 	.buy {
-		select {
-			display: block;
-			color: white;
-			background: black;
-			border: none;
-			width: 45%;
-			float: left;
-			border-radius: 0px;
-			padding: em(20);
-			text-transform: uppercase;
-			font:13px/20px $serif;
-			letter-spacing: 1px;
-		    outline:none;
-		}
-		select option {
-			border-radius: none;
-		}
 
 		button {
 			background: rgba(0,0,0,1);
 			color: white;
-		}
-
-		button.inactive {
-			width: 45%;
-			color: black;
-			float: right;
-			padding: em(20);
-			border-radius: none;
-			background: rgba(0,0,0,.1);
 			text-transform: uppercase;
 			font:13px/20px $serif;
 			letter-spacing: 1px;
+			float: right;
+			padding: em(20);
+			border-radius: none;
+			width: 45%;
+		}
+
+		button.inactive {
+			color: black;
+			background: rgba(0,0,0,.1);
 		}
 	}
 }
