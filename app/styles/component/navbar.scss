@@ -123,11 +123,37 @@ header nav {
 			transition: all $ease .5s;
 			margin-top: em(23);
 		}
-
-
-
 	}
+	span.loader {
+		pointer-events: none; 
+		width: em(42);
+		height: em(42);
+		display: block;
+		position: absolute;
+		top: em(17.5);
+		right: em(7.5);
+		background: red;
+		opacity: 1;
+		background: url('../images/loader.png');
+		transition: all $ease .3s;
+		@include animation(loopy linear .6s infinite);
+		opacity: 0;
+		&.active {
+			opacity: 1;
+		}
+	}
+
 }
+
+@include keyframes(loopy) {
+  from {
+    @include transform(rotate(0));
+  }
+  to {
+    @include transform(rotate(-360deg));
+  }
+}
+
 
 .infoMenu {
 	position: fixed;

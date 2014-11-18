@@ -292,6 +292,7 @@ var site = {
 	loadContent: function(href){
 	
 		history.pushState(null, null, href);  
+		$('span.loader').addClass('active');
 		site.wrap.addClass('hidden').promise().done(function(){
 			//l('2 hidden wrap');
 			site.page.animate({scrollTop: 0}, {
@@ -301,12 +302,12 @@ var site = {
 					//l('3 scroll');
 					var contents = href + ' #wrap > *';
 					site.wrap.load(contents, function(e){
-					
-					 	//l('4 loaded ' + href);
+						//l('4 loaded ' + href);
 					 	site.wrap.removeClass('hidden');
 						site.pageInit();
 					 	site.pageLinkAjax();;
 						site.replacePageTitle();
+						$('span.loader').removeClass('active');
 					});
 				}
 			});

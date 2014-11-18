@@ -33,9 +33,11 @@
 	.images {
 		width: 55%;
 		float: left;
+		min-height: 100%;
 		overflow: hidden;
 		@media only screen and (max-width : $phone) { 
-			width: 100%
+			width: 100%;
+			min-height: inherit;
 		}
 	}
 }
