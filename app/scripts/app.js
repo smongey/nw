@@ -49,21 +49,18 @@ var site = {
 	},
 
 	scrollInit: function(){
-		//l('\t\tscrolling fired');
-
-		// $('ul.categories, ul.brands').localScroll({
-		// 	offset: -80,
-		// 	duration: 1500,
-		// 	easing: site.ease
-		// });
-
 		$('ul.categories a, ul.brands a').on({
-			click: function(){
-				l('arse');
-				l($(this).attr('href'));
-			}
-		})
+			click: function(e){
+				e.preventDefault();
+				var anchor = $(this).attr('href');
+				site.page.scrollTo(anchor, {
+					easing: site.ease,
+					offset: -80,
+					duration: 1500
+				});
 
+			}
+		});
 	},
 	
 	dropDown: function(){
@@ -308,14 +305,23 @@ var site = {
 					 	//l('4 loaded ' + href);
 					 	site.wrap.removeClass('hidden');
 						site.pageInit();
-					 	site.pageLinkAjax();
+					 	site.pageLinkAjax();;
+						site.replacePageTitle();
 					});
 				}
 			});
 
 		});
-		this.checkBackButton();
-
+	},
+	replacePageTitle: function(){
+		
+		var wrapTitle = $('#wrap h1').text();
+		if(wrapTitle.length) {
+			$('title').empty().text('Nowhere - ' + wrapTitle);
+		} else {
+			$('title').empty().text('Nowhere');
+		}
+		
 	},
 	menuLinkAjax: function(){
 		$('.productMenu a').on({
@@ -325,7 +331,7 @@ var site = {
 				$('li.shop a').removeClass('active');
 				$('.productMenu').removeClass('active');	
 
-				link = $(this).attr('href');
+				var link = $(this).attr('href');
 				site.loadContent(link);
 			}
 		});
@@ -335,15 +341,16 @@ var site = {
 			click: function(e) {
 				l('page clicked');
 				e.preventDefault();
-			    link = $(this).attr('href');
+			    var link = $(this).attr('href');
 			    site.loadContent(link);
 			}
 		}); 
 	},
 	checkBackButton: function(){
-		l('checked back button');
-		this.win.on('popstate', function(){
-			link = location.pathname.replace(/^.*[\\\/]/, ''); //get filename only
+		this.win.on('popstate', function(e){
+			e.preventDefault();
+			link = location.pathname //.replace(/^.*[\\\/]/, ''); //get filename only
+			//l('pathname   ' + location.pathname);
 			site.loadContent(link);
 		});
 
@@ -381,4 +388,5 @@ site.doc.ready(function(){
 	site.pageInit();
 	site.menuLinkAjax();
 	site.pageLinkAjax();
+	site.checkBackButton();
 });
