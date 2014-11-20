@@ -6,6 +6,9 @@ header nav {
 	height: em(75);
 	z-index: 3;
 	//opacity: .6;
+	.focused & {
+		position: absolute;
+	}
 
 	ul.main {
 		display: block;
@@ -168,6 +171,11 @@ header nav {
 	transition: all $ease .5s;
 	opacity: .7;
 	overflow: hidden;
+
+	.focused & {
+		position: absolute;
+	}
+
 	@media only screen and (max-width : $tablet) {
 		padding: em(10) em(20) 0;
 	}
@@ -222,6 +230,11 @@ header nav {
 	opacity: 0;
 	pointer-events: none;
 	margin-top: -100px;
+
+	.focused & {
+		position: absolute;
+	}
+
 	@media only screen and (max-width : $tablet ) {
 		height: 100%;
 		padding: 0 0 em(85) 0;

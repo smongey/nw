@@ -24,6 +24,26 @@ var site = {
 		}
 	},
 
+	inputFix: function(){
+
+		l('inputFix ran');
+		if (this.isTouchy()) {
+
+			$(document)
+			.on('focus', 'input', function(e) {
+				$('body').addClass('focused');
+				l('FOCUS RAN');
+			})
+
+			.on('blur', 'input', function(e) {
+				$('body').removeClass('focused');
+				l('BLUR RAN');
+			});
+			
+		}
+
+	},
+
 	isTouchy: function(){
 		return 'ontouchstart' in window  || 'onmsgesturechange' in window;
 	},
@@ -34,7 +54,8 @@ var site = {
 		this.slickSlider();
 		this.dropDown();
 		this.backToTop();
-		this.brandJump();	
+		this.brandJump();
+		this.inputFix();	
 	},
 
 	scrollInit: function(){	
