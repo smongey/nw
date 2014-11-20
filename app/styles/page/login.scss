@@ -1,0 +1,162 @@
+#login {
+	padding: em(60) 0 em(80) 0;
+	overflow: auto;
+	width: 100%;
+	@media only screen and (max-width : $phone) {
+		padding: em(30) 0 em(80) 0;
+	}
+}
+
+.register, .login {
+	width: 50%;
+	float: left;
+	margin-bottom: 2%;
+	padding: 0 em(100) em(100);
+	font: 16px/22px $serif;
+
+	@media only screen and (max-width : $tablet) {
+		padding: 0 em(30) em(30) em(30);
+	}
+
+	@media only screen and (max-width : $phone) {
+		width: 100%;
+		border-right: none !important;
+	}
+
+	.info {
+		min-height: em(220);
+		padding-bottom: em(30);
+	}
+	
+	.item {
+		height: em(80);
+	}
+
+	h2 {
+		font: 30px/1em $serifBold;
+		margin-bottom: em(10);
+		height: em(30);
+		color: black;
+	}
+	label {
+		font: .9em/1em $serif;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	input[type="text"] {
+		padding: em(5) 0;
+		font: 1.2em/1em $serif;
+		border: none;
+		box-shadow: none;
+		border-radius: 0px;
+		border-bottom: 1px solid black;
+		@include transition(all ease .3s);
+	}
+	input[type="text"]:focus, input[type="text"]:active {
+		outline: none;
+		box-shadow: none;
+		border-bottom: 4px solid black;
+	}
+	button[type="submit"] {
+		border-radius: 0px;
+		background: black;
+		font: 14px/22px $serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding: em(12) em(30) em(15);
+		@include transition(all ease .2s);
+		margin-top: em(20);
+	}
+	button[type="submit"]:hover {
+		background: rgba(0,0,0,.3);
+	}
+}
+
+.register {
+	border-right: 1px solid black;
+	padding-left: em(50);
+	
+	.remember {
+		margin-top: em(20);
+	}
+
+
+	@media only screen and (max-width : $tablet) {
+		padding-left: em(30);
+	}
+	@media only screen and (max-width : $phone) { 
+		border-bottom: 1px solid black;
+	}
+}
+
+.login {
+	padding-right: em(50);
+	@media only screen and (max-width : $tablet) {
+		padding-left: em(30);
+	}
+	@media only screen and (max-width : $phone) {
+		padding-top: em(30);
+	}
+	button[type="submit"] {
+		margin-top: em(-20);
+	}
+}
+
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+	position: absolute;
+	left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+	position: relative;
+	padding-left: 25px;
+	cursor: pointer;
+}
+
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 18px;
+	border: 0px;
+	height: 18px;
+	box-shadow: 0px;
+	background: black;
+	border-radius: 0px;
+}
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+	content: '×';
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	font-size: 24px;
+	color: white;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+	border: none;
+}
+
+/* hover style just for information */
+label:hover:before {
+	border: none;
+}
+

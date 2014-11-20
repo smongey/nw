@@ -321,7 +321,8 @@ var site = {
 				$('.productMenu').removeClass('active');
 
 				$('li.info a').removeClass('active');
-				$('.infoMenu').removeClass('active');	
+				$('.infoMenu').removeClass('active');
+				site.page.removeClass('locked');	
 
 				var link = $(this).attr('href');
 				site.loadContent(link);
