@@ -1,20 +1,10 @@
 var site = {
-	menuHeight: $('nav').height(), 
-	//productMenu: $('.productMenu'), 
-	// productMenuHeight: $('.productMenu').height(), 
-	// productMenuOffset: -(this.productMenuHeight + this.menuHeight), 
-	// infoLink: $('li.info a'), 
-//	shopLink: $('li.shop a'),
-	// brandInfo: $('#about'),
-	// brandLink: $('a.about'),
-	// infoMenu: $('.infoMenu'),
-	//scrollNav: $('ul.categories, ul.brands'),
+	menuHeight: $('nav').height(),
 	page: $('body'),
 	doc: $(document),
 	win: $(window),
 	wrap: $('#wrap'),
 	contents: $('#wrap > *'),
-	//header: $("header.main"),
 	menuDelay: 750,
 	ease: 'easeInOutQuint',
 	scroll: {
@@ -35,7 +25,6 @@ var site = {
 	},
 
 	isTouchy: function(){
-
 		return 'ontouchstart' in window  || 'onmsgesturechange' in window;
 	},
 
@@ -45,10 +34,10 @@ var site = {
 		this.slickSlider();
 		this.dropDown();
 		this.backToTop();
-		this.brandJump();
+		this.brandJump();	
 	},
 
-	scrollInit: function(){
+	scrollInit: function(){	
 		$('ul.categories a, ul.brands a').on({
 			click: function(e){
 				e.preventDefault();
@@ -290,7 +279,6 @@ var site = {
 	},
 
 	loadContent: function(href){
-	
 		history.pushState(null, null, href);  
 		$('span.loader').addClass('active');
 		site.wrap.addClass('hidden').promise().done(function(){
@@ -314,29 +302,33 @@ var site = {
 
 		});
 	},
+
 	replacePageTitle: function(){
-		
 		var wrapTitle = $('#wrap h1').text();
 		if(wrapTitle.length) {
 			$('title').empty().text('Nowhere - ' + wrapTitle);
 		} else {
 			$('title').empty().text('Nowhere');
 		}
-		
 	},
+
 	menuLinkAjax: function(){
-		$('.productMenu a').on({
+		$('.productMenu a, .infoMenu a').on({
 			click: function(e) {
 				l('menu clicked');
 				e.preventDefault();
 				$('li.shop a').removeClass('active');
-				$('.productMenu').removeClass('active');	
+				$('.productMenu').removeClass('active');
+
+				$('li.info a').removeClass('active');
+				$('.infoMenu').removeClass('active');	
 
 				var link = $(this).attr('href');
 				site.loadContent(link);
 			}
 		});
 	},
+
 	pageLinkAjax: function(){
 		$('div.products div.product a').on({
 			click: function(e) {
@@ -347,6 +339,7 @@ var site = {
 			}
 		}); 
 	},
+
 	checkBackButton: function(){
 		this.win.on('popstate', function(e){
 			e.preventDefault();
@@ -354,7 +347,6 @@ var site = {
 			//l('pathname   ' + location.pathname);
 			site.loadContent(link);
 		});
-
 	} // end
 }
 

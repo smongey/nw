@@ -23,6 +23,10 @@
  */
 * { margin: 0; }
 
+::selection { background: #e6e6e6; }
+::-moz-selection { background: #e6e6e6; }
+
+
 html, body { height: 100%; }
 
 body {
