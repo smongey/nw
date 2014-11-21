@@ -23,8 +23,16 @@
  */
 * { margin: 0; }
 
+// Selection Text
 ::selection { background: #e6e6e6; }
 ::-moz-selection { background: #e6e6e6; }
+
+// Input Placeholder Text
+::-webkit-input-placeholder { color: black; }
+:-moz-placeholder { color: black; }
+::-moz-placeholder { color: black; }
+:-ms-input-placeholder { color: black; }
+
 
 
 html, body { height: 100%; }

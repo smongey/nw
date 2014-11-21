@@ -59,7 +59,7 @@
 	}
 	button[type="submit"] {
 		border-radius: 0px;
-		background: black;
+		background: rgba(0,0,0,.6);
 		font: 14px/22px $serif;
 		text-transform: uppercase;
 		letter-spacing: 2px;
@@ -68,7 +68,13 @@
 		margin-top: em(20);
 	}
 	button[type="submit"]:hover {
-		background: rgba(0,0,0,.3);
+		background: rgba(0,0,0,1);
+	}
+	button[type="submit"]:active, button[type="submit"]:focus {
+		background: $copper;
+		color: white;
+		outline: none;
+
 	}
 }
 

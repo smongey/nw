@@ -352,7 +352,7 @@ var site = {
 	},
 
 	pageLinkAjax: function(){
-		$('div.products div.product a').on({
+		$('.products .product a, a.continue, table a').on({
 			click: function(e) {
 				l('page clicked');
 				e.preventDefault();
