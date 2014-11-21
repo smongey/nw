@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Single</title>
+    <title>Cart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,66 +85,87 @@
 
     <div id="wrap">
 
-      <section id="single">
+      <div id="cart">
 
-	
-	<div class="single">
-
-		<div class="text">
-			<div class="top">
-				<span class="brand">A Kind of Guise</span>
-				<h1>Bebek Blouson</h1>
-				<span class="price">&euro;465</span>
-			</div>
-			<div class="info">
-				<p>Stadium jumper with zipper front. Made from a sturdy, luxurious Harris Tweed fabric. Has rib knit cuffs, waist and Johnny collar and set of reversed flap pockets.</p>
-			</div>
-			<div class="buy">
-			
-				<dl id="sample" class="dropdown">
-    <dt><a href="#"><span>Size</span></a></dt>
-    <dd>
-        <ul>
-            <li><a href="#">Small<span class="value">S</span></a></li>
-            <li><a href="#">Medium<span class="value">M</span></a></li>
-            <li><a href="#">Large<span class="value">L</span></a></li>
-            <li><a href="#">X Large<span class="value">XL</span></a></li>
-        </ul>
-    </dd>
-</dl>
-
-				<button class="inactive">Add to Cart</button>
-			</div>
-		</div>
-
-		<div class="images">
-			<div><a href="#"><img src="http://placehold.it/700x900/eee/fff" alt=""></a></div>
-			<div><a href="#"><img src="http://placehold.it/700x900/ccc/fff" alt=""></a></div>
-			<div><a href="#"><img src="http://placehold.it/700x900/888/fff" alt=""></a></div>
-			<div><a href="#"><img src="http://placehold.it/700x900/333/fff" alt=""></a></div>
-			<div><a href="#"><img src="http://placehold.it/700x900/000/fff" alt=""></a></div>
-		</div>
-
-	</div>
-
-	<div class="products">
-
-		<div id="about">
-			<h2>A Kind of Guise</h2>
-			<div class="info">
-				<p>A Kind Of Guise was born from the idea of creating products which are equally well designed and of high quality in terms of both production and the materials used.</p>
-			</div>
-			<div class="ourtake">
-				<p>Our Take: <em>which are equally well designed and of high quality in terms of both production and the materials used.</em></p>
-			</div>
-		</div>
-	
-	</div>
+    <h1>Cart</h1>
 
 
-</section>
+    <!-- CART LISTING -->
 
-  
+    <form action="#" id="checkout" method="post">
+        <fieldset>
+            <table id="shopping-cart-table" class="data-table cart-table">
+                <thead>
+                    <tr>
+                        <th class="image"></th>
+                        <th rowspan="1" class="product">Product</th>
+                        <th rowspan="1" class="price">Price</th>
+                        <th rowspan="1" class="quantity">Quantity</th>
+                        <th colspan="1" class="subtotal">Sub Total</th>
+                        <th colspan="1" class="delete"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="image">
+                            <img src="http://placehold.it/100x100" alt="Product Title">
+                        </td>
+                        <td class="product">
+                            <a href="http://smongey.github.io/nw/single/">
+                                <h2 class="product-name">Product Title <span>Size</span></h2>
+                            </a>
+                        </td>
+
+                        <td class="price">
+                           <span>€200</span>
+                        </td>
+                        <td class="quantity">
+                            <input type="number" name="#" value="1" size="4" title="quantity">
+                        </td>
+                        <td class="subtotal">
+                            <span>€200</span>                            
+                        </td>
+                        <td class="delete">
+                            <a href="#remove">Remove</a>                           
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <script type="text/javascript">
+                // decorateTable('shopping-cart-table')
+            </script>
+        </fieldset>
+    </form>
+
+    <!-- DISCOUNTS -->
+
+    <div class="discount">
+        <h3>Discount Code</h3>
+        <p>Enter your code to apply discount</p>
+        <input type="text" placeholder="Enter code here…">
+    </div>
+
+
+    <!-- TOTALS -->
+
+    <div class="total">  
+        
+        <div class="cost">
+          <h3>Subtotal  &mdash; &euro;200</h3>
+          <input class="update" type="submit" name="update" value="Update cart">
+          <input class="checkout" type="submit" name="checkout" value="Check out">    
+          <a class="continue" href="http://smongey.github.io/nw/">or Continue shopping</a>
+        </div>
+
+        <div class="notes">
+          <textarea name="note" placeholder="Type a note about your order here…"></textarea>
+        </div>
+
+    </div>
+
+</div>  
       <div class="push"></div>
 
     </div>
