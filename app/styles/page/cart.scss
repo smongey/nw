@@ -1,0 +1,339 @@
+#cart {
+	
+	padding: em(0) 0 em(80) 0;
+	overflow: auto;
+	width: 100%;
+	@media only screen and (max-width : $phone) {
+		padding: em(30) 0 em(30) 0;
+	}
+
+	h1 {
+		font: 36px/36px $serifBold;
+		text-align: center;
+		color: black;
+		padding: em(30);
+		@media only screen and (max-width : $phone) {
+			padding: em(0) em(0) em(10) em(0);
+			border-bottom: 1px solid black;
+		}
+	}
+
+}
+
+
+
+#checkout {
+
+	fieldset {
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	table {
+		margin-bottom: 0;
+	}
+
+	thead th {
+		font: 13px/20px $serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: normal;
+		border: none;
+		color: black;
+	}
+	thead tr {
+		border-bottom: 1px solid black;
+	}
+	tbody th {
+		vertical-align: middle;
+
+	}
+
+	tbody td {
+		border: none;
+	}
+	tbody tr {
+		border-bottom: 1px solid black;
+	}
+
+	@media only screen and (max-width : $phone) {
+
+		table {
+			position: relative;
+			display: block;
+			float: left;
+		}
+		thead {
+			display: none;
+		}
+		tbody {
+			vertical-align: none;
+			display: block;
+			float: left;
+		}
+		tbody tr {
+			display: inline-block;
+			width: 100%;
+			float: left;
+			padding: em(10) 0;
+			border-bottom: 1px solid black;
+		}
+		tbody td {
+			display: block;
+			float: left;
+			text-align: center;
+			border-bottom: none;
+		}
+
+		td.image, td.product {
+			width: 100%;
+		}
+
+		td.price, td.quantity, td.subtotal {
+			width: 33%;
+		}
+		
+		td.quantity {
+			padding: 0;
+			input {
+				width: 100%;
+				margin: 0;
+			}
+		}
+		td.delete {
+			width: 100%;
+			a {
+				text-align: center;
+				display: inline;
+				background: none;
+				color: black;
+				border-radius: 0px;
+				text-indent: 0px;
+			}
+			a::after {
+				display: none;
+			}
+		}
+
+ 	}
+
+	.image {
+		img {
+			max-width: 90%;
+		}
+	}
+
+	.product {
+		a {
+			color: black;
+		}
+		h2 {
+			font: 22px/24px $serifBold;
+			span {
+				font: 18px/24px $serif;
+				display: block;
+				color: lighten(grey, 15%);
+
+			}
+		}
+	}
+
+	.price {
+		span {
+			font: 18px/24px $serif;
+			@include fontFeature("onum");
+		}
+
+	}
+
+	.quantity {
+		input {
+			background: black;
+			color: white;
+			border: none;
+			border-radius: 0px;
+			font: 18px/24px $serif;
+			@include fontFeature("onum");
+			font-weight: normal;
+			outline: none;
+			width: em(50);
+			text-align: center;
+			display: block;
+			margin-top: em(10);
+
+		}
+	}
+
+	.subtotal {
+		span {
+			font: 18px/24px $serif;
+			@include fontFeature("onum");
+		}
+	}
+
+	.delete {
+
+		a {
+			display: block;
+			text-indent: -9999px;
+			width: em(30); 
+			height: em(30);
+			border-radius: 100%;
+			background: rgba(0,0,0,1);
+			position: relative;
+			@include transition(all $ease .2s);
+		}
+		a::after {
+			display: block;
+			width: em(30); 
+			height: em(30);
+			top: 0;
+			padding: em(2) em(10);
+			content: '×';
+			color: white;
+			position: absolute;
+			z-index: 1;
+			text-indent: 0;
+		}
+		a:hover {
+			background: red;
+		}
+	}
+
+	.image  {
+		width: 13%;
+	}
+
+	.product {
+		width: 40%;
+	}
+
+	.price, .quantity, .subtotal {
+		width: 14%;
+	}
+	.delete {
+		width: 5%;
+	}
+
+}
+
+
+.discount {
+	width: 30%;
+	float: left;
+	margin-top: em(30);
+	@media only screen and (max-width: $phone) {
+		width: 100%;
+		margin-bottom: em(20);
+		text-align: center;
+		padding: em(20) em(30) em(30);
+		input {
+			text-align: center;
+			margin: 0 auto;
+			padding: em(10) 0;
+			width: 100% !important;
+		}
+	}	
+	h3 {
+		font: 22px/24px $serifBold;
+		margin-bottom: em(10);
+		color: black;
+	}
+	p {
+		font: 16px/22px $serif;
+	}
+	input {
+		box-shadow: none;
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid black;
+		padding: em(5) 0;
+		font: 16px/20px $serif;
+		@include transition(all $ease .3s);
+		max-width: em(250);
+	}
+	input:focus, input:active {
+		outline: none;
+		box-shadow: none;
+		border-bottom: 4px solid black;
+	}
+}
+
+
+.total {
+	width: 40%;
+	float: right;
+	@media only screen and (max-width: $phone) {
+		width: 100%;
+	}
+	.cost {
+		h3 {
+			color: white;
+			text-align: center;
+			padding: em(20); 
+			font: 22px/24px $serifBold;
+			display: block;
+			background: black;
+		}
+		input.update {
+			border-radius: 0px;
+			display: block;
+			float: left;
+			width: 50%;
+			background: rgba(0,0,0,.8);
+			color: white;
+			padding: em(15);
+			font: 18px/24px $serifBold;
+		}
+
+		input.checkout {
+			border-radius: 0px;
+			display: block;
+			float: right;
+			width: 50%;
+			background: rgba(0,0,0,.6);
+			color: white;
+			padding: em(15);
+			font: 18px/24px $serifBold;
+		}
+
+		a.continue {
+			display: block;
+			background: rgba(0,0,0,.4);
+			float: left;
+			width: 100%;
+			text-align: center;
+			padding: em(15);
+			color: black; 
+			font: 18px/24px $serifIta;
+
+		}
+		input, a {
+			@include transition(all $ease .3s);
+		}
+		input:hover, a.continue:hover {
+			background: black;
+			color: white;
+		}
+		input:active, input:focus {
+			background: $copper;
+			outline: none;
+		}
+	}
+
+	.notes {
+		textarea {
+			border: none;
+			border-radius: 0px;
+			box-shadow: none;
+			outline: none;
+			background: rgba(0,0,0,.2);
+			color: black;
+			font: 15px/22px $serif;
+			padding: em(20);
+			min-height: em(150);
+		}
+	}
+}
+
